@@ -72,7 +72,7 @@ def main():
                 with col4: # for tcentralen
                     FetchFunctions.create_timetable(ride_to_T_centralen_aspudden, "T-centralen")
 
-            time.sleep(30)
+            time.sleep(180)
             placeholder.empty()
 
 
