@@ -20,11 +20,14 @@ def main():
 
         placeholder = st.empty()
 
-        while True:
+        
+        with placeholder.container():
+            
 
-            with placeholder.container():
-                
+
+            if st.button("Refresh"):
                 st.write(f'Last API call made at: {FetchFunctions.get_time().strftime("%H:%M")}') # Writes out last time the site was updated
+
                 feed = FetchFunctions.fetch_data("https://opendata.samtrafiken.se/gtfs-rt/sl/TripUpdates.pb?key=73f1656eaba44dddad530693523cd44a")
 
                 # Creates a list for the next arrival times for each stop id
@@ -64,7 +67,7 @@ def main():
                 with col4: # for tcentralen
                     FetchFunctions.create_timetable(ride_to_T_centralen_aspudden, "T-centralen")
 
-                time.sleep(200) #sleep for 200 seconds before refreshing
+                
           
 if __name__ == "__main__":
     main()
