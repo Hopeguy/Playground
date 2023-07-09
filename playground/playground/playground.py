@@ -18,14 +18,18 @@ def main():
                            layout="wide")
         st.title("Real Time")
 
+        st.sidebar.title("Actions")
+
+
+        if st.sidebar.button("Refresh", use_container_width=True):
+           st.experimental_rerun()
+
         placeholder = st.empty()
 
-        
         with placeholder.container():
-            
 
+            while True:
 
-            if st.button("Refresh"):
                 st.write(f'Last API call made at: {FetchFunctions.get_time().strftime("%H:%M")}') # Writes out last time the site was updated
 
                 feed = FetchFunctions.fetch_data("https://opendata.samtrafiken.se/gtfs-rt/sl/TripUpdates.pb?key=73f1656eaba44dddad530693523cd44a")
@@ -66,6 +70,8 @@ def main():
                 # Create the second box using st.markdown in the second column
                 with col4: # for tcentralen
                     FetchFunctions.create_timetable(ride_to_T_centralen_aspudden, "T-centralen")
+
+                time.sleep(200)
 
                 
           
