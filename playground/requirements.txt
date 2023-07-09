@@ -15,4 +15,3 @@ streamlit==0.87.0
 requests==2.26.0
 gtfs-realtime-bindings = 1.0.0
 protpbuf
--e .
