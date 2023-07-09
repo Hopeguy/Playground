@@ -21,7 +21,7 @@ def main():
         st.sidebar.title("Actions")
 
 
-        if st.sidebar.button("Refresh", use_container_width=True):
+        if st.sidebar.button("Refresh"):
            st.experimental_rerun()
 
         placeholder = st.empty()
