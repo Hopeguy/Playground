@@ -3,5 +3,4 @@ pandas>=1.3.0
 requests>=2.26.0
 gtfs-realtime-bindings >= 1.0.0
 altair>=4.1.0
-streamlit==1.6
-click == 8.0
+streamlit>=1.6
