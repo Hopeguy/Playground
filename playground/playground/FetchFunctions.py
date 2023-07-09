@@ -6,7 +6,6 @@ from google.protobuf.json_format import MessageToJson
 from google.protobuf.json_format import Parse
 from google.protobuf.descriptor import FieldDescriptor
 from google.transit import gtfs_realtime_pb2
-from google.transit import gtfs_realtime_pb2
 import streamlit as st
 import pandas as pd
 
