@@ -97,9 +97,9 @@ def get_next_ride(list_rides):
     takes a list of rides for a specific stop and returns the next on that is positive
     """
     try:
-        if list_rides[0] < 0 and list_rides[1] < 0:
+        if list_rides[0] < 0 and list_rides[1] <= 0:
             return list_rides[2]
-        elif list_rides[0] < 0 and list_rides[1] > 0:
+        elif list_rides[0] < 0 and list_rides[1] >= 0:
             return list_rides[1]
         else:
             return list_rides[0]
