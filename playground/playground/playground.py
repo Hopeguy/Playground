@@ -16,7 +16,7 @@ def main():
 
         st.set_page_config(page_title="Real-Time Dashboard",
                            layout="wide")
-        st.title("Real time data")
+        st.title("Real Time")
 
         placeholder = st.empty()
 
