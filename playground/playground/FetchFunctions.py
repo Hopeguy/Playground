@@ -1,8 +1,14 @@
+# Functions used in Main is stored here
 import requests
 import datetime
 from google.transit import gtfs_realtime_pb2
+import streamlit as st
+import pandas as pd
 
 def get_time():
+    """
+    Returns the current time
+    """
     return datetime.datetime.now()
 
 def get_stockholm_temperature():
@@ -35,8 +41,24 @@ def get_color(value):
     return f'rgb({red},{green},{blue})'
 
 
-def fetch_data(url):
+def create_timetable(list_of_times, name_of_line):
+    
+    """
+    Creates a box and timetable of the train times using streamlit
 
+    list_of_times : list next train times
+    name_of_line : the name of the line
+    """
+    color = get_color(get_next_ride(list_of_times))
+
+    st.markdown(f'<div style="background-color: {color}; height: 100px; width: 100%; color: black">'
+                                f'<p style="font-size: 24px; line-height: 1.2; font-weight: bold; text-align: center">'
+                                f'{name_of_line}<br/>{get_next_ride(list_of_times)} Minutes</p></div>',
+                                unsafe_allow_html=True)
+
+    st.dataframe(pd.DataFrame(list_of_times, columns=["Minutes until next departure"]), use_container_width=True)
+
+def fetch_data(url):
     """
     Using request lib to get live data from url (in GTRF format)
     """
@@ -50,7 +72,6 @@ def fetch_data(url):
 
 
 def get_trip_data(feed, stop_id):
-
     """
     using feed(data of all stops) and a stop id to get the realtime data on those.
 
