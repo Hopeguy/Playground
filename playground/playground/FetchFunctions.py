@@ -56,7 +56,7 @@ def create_timetable(list_of_times, name_of_line):
                                 f'{name_of_line}<br/>{get_next_ride(list_of_times)} Minutes</p></div>',
                                 unsafe_allow_html=True)
 
-    st.dataframe(pd.DataFrame(list_of_times, columns=["Minutes until next departure"]))
+    st.dataframe(pd.DataFrame(list_of_times, columns=["Minutes until next departure"]), use_container_width=True)
 
 def fetch_data(url):
     """

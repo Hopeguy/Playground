@@ -21,17 +21,16 @@ def main():
         st.sidebar.title("Actions")
 
 
-        if st.sidebar.button("Refresh"):
-           st.experimental_rerun()
+        if st.sidebar.button("Refresh", use_container_width=True):
+            st.experimental_rerun()
 
-        
-        
 
         while True:
 
             placeholder = st.empty()
 
             with placeholder.container():
+
                 st.write(f'Last API call made at: {FetchFunctions.get_time().strftime("%H:%M")}') # Writes out last time the site was updated
 
                 feed = FetchFunctions.fetch_data("https://opendata.samtrafiken.se/gtfs-rt/sl/TripUpdates.pb?key=73f1656eaba44dddad530693523cd44a")
@@ -74,6 +73,10 @@ def main():
                     FetchFunctions.create_timetable(ride_to_T_centralen_aspudden, "T-centralen")
 
             time.sleep(30)
+            placeholder.empty()
+
+
+
 
                 
           
