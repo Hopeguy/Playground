@@ -9,7 +9,10 @@ def main():
         # df = pd.read_csv("playground\playground\Static_SL_df.csv")
         # df_aspudden = df[df["stop_name"] == "Aspudden"]
         # stop_id = df[(df["stop_name"] == "Tekniska högskolan")]
-
+        # TODO: What need to be done
+        # ? Question 
+        # * Highligth
+        # !Do not use
 
         subway_stop_id_dict_tekniska = {"Tekniska-tcentralen": "9022001002221001", "Tekniska-Mörby": "9022001002221002"} # Spår 2 är söderut (in mot stan). Spår 1 är norrut (ut till mörby)
         subway_stop_id_dict_aspudden = {"Aspudden-tcentralen": "9022001002611001", "Aspudden-Norsborg": "9022001002611002"} # Spår 1 går norrut (in mot stan). Spår 2 går söderut (ut mot Norborg)
